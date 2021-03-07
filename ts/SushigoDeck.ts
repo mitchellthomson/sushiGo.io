@@ -24,8 +24,7 @@ class SushigoDeck{
         temporaryValue = this.cards[currentIndex];
         this.cards[currentIndex] = this.cards[randomIndex];
         this.cards[randomIndex] = temporaryValue;
-        if(this.cards[currentIndex].name == "Egg")
-        {
+        if(this.cards[currentIndex].name == "Egg"){
             temp = currentIndex;
         }
         }
@@ -38,12 +37,10 @@ class SushigoDeck{
 
     private Nigiri(): void{
         for (let x = 0; x<21;x++){
-            if(x<6)
-            {
+            if(x<6){
                 this.cards.push(new Card("Egg",1));
             }
-            else if(x>5&&x<16)
-            {
+            else if(x>5&&x<16){
                 this.cards.push(new Card("Salmon",2));
             }
             else{
@@ -56,17 +53,16 @@ class SushigoDeck{
         var i :number =1;
         var j :number =0;
         var k :number =0;
-        for (let x = 0;x<14;x++)
-        {
+        for (let x = 0;x<14;x++){
             this.cards.push(new Card("Tempura",0,0,i,j,k))
         }
     }
+
     private Sashimi():void{
         var i :number =0;
         var j :number =1;
         var k :number =0;
-        for (let x = 0;x<14;x++)
-        {
+        for (let x = 0;x<14;x++){
             this.cards.push(new Card("Sashimi",0,0,i,j,k))
         }
     }
@@ -75,41 +71,35 @@ class SushigoDeck{
         var i :number =0;
         var j :number =0;
         var k :number =1;
-        for (let x = 0;x<14;x++)
-        {
+        for (let x = 0;x<14;x++){
             this.cards.push(new Card("Dumpling",0,0,i,j,k))
         }
     }
 
     private Pudding():void{
-        for (let x = 0;x<10;x++)
-        {
+        for (let x = 0;x<10;x++){
             this.cards.push(new Card("Pudding",0,0,0,0,0,1))
         }
     }
 
     private Wasabi():void{
-        for (let x =0;x<6;x++)
-        {
+        for (let x =0;x<6;x++){
             this.cards.push(new Card("Wasabi"))
         }
     }
 
     private Chopstick():void{
-        for (let x =0;x<4;x++)
-        {
+        for (let x =0;x<4;x++){
             this.cards.push(new Card("Chopstick"))
         }
     }
 
     private Maki():void{
         for (let x = 0; x<26;x++){
-            if(x<6)
-            {
+            if(x<6){
                 this.cards.push(new Card("Maki",0,1));
             }
-            else if(x>5&&x<18)
-            {
+            else if(x>5&&x<18){
                 this.cards.push(new Card("Maki",0,2));
             }
             else{

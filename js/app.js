@@ -16,6 +16,32 @@ var Card = /** @class */ (function () {
     }
     return Card;
 }());
+var Player = /** @class */ (function () {
+    function Player() {
+        this.PlayerTempura = 0;
+        this.PlayerNigiri = 0;
+        this.PlayerSashimi = 0;
+        this.PlayerDumpling = 0;
+        this.PlayerPudding = 0;
+        this.PlayerWasabi = 0;
+        this.PlayerChopstick = 0;
+        this.PlayerMaki = 0;
+        // this.PlayerTempura();
+        // this.PlayerNigiri();
+        // this.PlayerSashimi();
+        // this.PlayerDumpling();
+        // this.PlayerPudding();
+        // this.PlayerWasabi();
+        // this.PlayerChopstick();
+        // this.PlayerMaki();
+    }
+    return Player;
+}());
+var Score = /** @class */ (function () {
+    function Score() {
+    }
+    return Score;
+}());
 var SushigoDeck = /** @class */ (function () {
     function SushigoDeck() {
         this.cards = [];
@@ -116,4 +142,8 @@ var SushigoDeck = /** @class */ (function () {
 var x = new SushigoDeck();
 var y = new SushigoDeck();
 x.shuffle();
+//console.log(x.cards);
+var p = new Player();
+p.PlayerDumpling++;
+console.log(p);
 //# sourceMappingURL=app.js.map
