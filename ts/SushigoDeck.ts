@@ -24,7 +24,7 @@ class SushigoDeck{
         temporaryValue = this.cards[currentIndex];
         this.cards[currentIndex] = this.cards[randomIndex];
         this.cards[randomIndex] = temporaryValue;
-        if(this.cards[currentIndex].name == "Egg"){
+        if(this.cards[currentIndex].name == "EggNigiri"){
             temp = currentIndex;
         }
         }
@@ -38,13 +38,13 @@ class SushigoDeck{
     private Nigiri(): void{
         for (let x = 0; x<21;x++){
             if(x<6){
-                this.cards.push(new Card("Egg",1));
+                this.cards.push(new Card("EggNigiri",1));
             }
             else if(x>5&&x<16){
-                this.cards.push(new Card("Salmon",2));
+                this.cards.push(new Card("SalmonNigiri",2));
             }
             else{
-                this.cards.push(new Card("Squid",3));
+                this.cards.push(new Card("SquidNigiri",3));
             }
         }
     }
@@ -97,13 +97,13 @@ class SushigoDeck{
     private Maki():void{
         for (let x = 0; x<26;x++){
             if(x<6){
-                this.cards.push(new Card("Maki",0,1));
+                this.cards.push(new Card("MakiOne",0,1));
             }
             else if(x>5&&x<18){
-                this.cards.push(new Card("Maki",0,2));
+                this.cards.push(new Card("MakiTwo",0,2));
             }
             else{
-                this.cards.push(new Card("Maki",0,3));
+                this.cards.push(new Card("MakiThree",0,3));
             }
         }
     }
