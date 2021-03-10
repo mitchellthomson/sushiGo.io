@@ -15,9 +15,11 @@ app.get("/", (req, res) => {
 // a websocket, log that a user has connected
 io.on("connection", function (socket) {
     console.log("a user connected");
-    // whenever we receive a 'message' we log it out
     socket.on("message", function (message) {
         console.log(message);
+        // echo the message back down the
+        // websocket connection
+        socket.emit("message", message);
     });
 });
 const server = http.listen(3000, function () {

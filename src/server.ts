@@ -20,7 +20,10 @@ io.on("connection", function(socket: any) {
     console.log("a user connected");
     
     socket.on("message", function(message: any) {
-    console.log(message);
+        console.log(message);
+        // echo the message back down the
+        // websocket connection
+        socket.emit("message", message);
     });
 });
 
