@@ -6,3 +6,4 @@ x.shuffle();
 
 let p = new Player();
 console.log(p);
+

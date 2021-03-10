@@ -14,6 +14,14 @@ var Card = /** @class */ (function () {
         this.appieThree = appieThree;
         this.dessert = dessert;
     }
+    Object.defineProperty(Card.prototype, "imageName", {
+        get: function () {
+            var s = this.name;
+            return s + '.png';
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Card;
 }());
 var Player = /** @class */ (function () {
@@ -37,11 +45,6 @@ var Player = /** @class */ (function () {
     }
     return Player;
 }());
-var Score = /** @class */ (function () {
-    function Score() {
-    }
-    return Score;
-}());
 var SushigoDeck = /** @class */ (function () {
     function SushigoDeck() {
         this.cards = [];
@@ -63,7 +66,7 @@ var SushigoDeck = /** @class */ (function () {
             temporaryValue = this.cards[currentIndex];
             this.cards[currentIndex] = this.cards[randomIndex];
             this.cards[randomIndex] = temporaryValue;
-            if (this.cards[currentIndex].name == "Egg") {
+            if (this.cards[currentIndex].name == "EggNigiri") {
                 temp = currentIndex;
             }
         }
@@ -75,13 +78,13 @@ var SushigoDeck = /** @class */ (function () {
     SushigoDeck.prototype.Nigiri = function () {
         for (var x_1 = 0; x_1 < 21; x_1++) {
             if (x_1 < 6) {
-                this.cards.push(new Card("Egg", 1));
+                this.cards.push(new Card("EggNigiri", 1));
             }
             else if (x_1 > 5 && x_1 < 16) {
-                this.cards.push(new Card("Salmon", 2));
+                this.cards.push(new Card("SalmonNigiri", 2));
             }
             else {
-                this.cards.push(new Card("Squid", 3));
+                this.cards.push(new Card("SquidNigiri", 3));
             }
         }
     };
@@ -127,23 +130,34 @@ var SushigoDeck = /** @class */ (function () {
     SushigoDeck.prototype.Maki = function () {
         for (var x_8 = 0; x_8 < 26; x_8++) {
             if (x_8 < 6) {
-                this.cards.push(new Card("Maki", 0, 1));
+                this.cards.push(new Card("MakiOne", 0, 1));
             }
             else if (x_8 > 5 && x_8 < 18) {
-                this.cards.push(new Card("Maki", 0, 2));
+                this.cards.push(new Card("MakiTwo", 0, 2));
             }
             else {
-                this.cards.push(new Card("Maki", 0, 3));
+                this.cards.push(new Card("MakiThree", 0, 3));
             }
         }
     };
     return SushigoDeck;
+}());
+var UICard = /** @class */ (function () {
+    function UICard(card) {
+        this.element = document.createElement('div');
+        this.img = document.createElement('img');
+        this.card = card;
+        this.element.classList.add("card");
+        this.element.appendChild(this.img);
+        this.img.src = 'img/' + this.card.imageName;
+    }
+    return UICard;
 }());
 var x = new SushigoDeck();
 var y = new SushigoDeck();
 x.shuffle();
 //console.log(x.cards);
 var p = new Player();
-p.PlayerDumpling++;
 console.log(p);
+console.log(x.cards[0].imageName);
 //# sourceMappingURL=app.js.map

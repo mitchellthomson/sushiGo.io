@@ -8,6 +8,6 @@ class UICard {
         this.element.classList.add("card");
         this.element.appendChild(this.img);
         this.img.src = 'img/' + this.card.imageName;
-
+        
     }
 }
